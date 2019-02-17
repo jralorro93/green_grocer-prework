@@ -44,7 +44,7 @@ def apply_coupons(cart, coupons)
       if cart["#{coupon_item} W/ COUPON"]
         cart["#{coupon_item} W/ COUPON"][:count] += 1 
       else 
-        cart["#{coupon_item} W/ COUPON"] = {:count => 1, :price => coupon[:cost]}
+        cart["#{coupon_item} W/ COUPON"] = {:price => coupon[:cost], :clearance => true, :count => 1}
         cart["#{coupon_item} W/ COUPON"] [:clearance] = cart[coupon_item][:clearance]
           binding.pry
       end 
